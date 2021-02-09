@@ -1,0 +1,33 @@
+<view style="background:  no-repeat 60% ;background-size:cover;" class='background'>
+
+  <view class='border'>
+    <view class="jusong">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+      mode="aspectFit"
+    ></button>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <view>
+      <button bindtap="onGetOpenid">点击登录</button>
+    </view>
+
+  <button type='primary' open-type='share' style='font-size:25rpx;width:250px;'>转发微信群，查看群通讯录</button>
+  </view>
+
+
+
+  <!-- <button bindtap="onLoad">点我拿头像</button> -->
+</view>
+  <view class="jusong">
+    <button bindtap="onGetWXACode" size="default" plain type="primary" style='font-size:25rpx;width:250px;'>获取小程序码</button>
+
+  <button bindtap="clearWXACodeCache" size="mini" plain type="default" style='font-size:25rpx;width:250px;'>清除缓存</button>
+  </view>
+  <view class="jusong" wx:if="{{wxacodeSrc !=''}}">
+    <image src="{{wxacodeSrc}}" mode="aspectFit"></image>
+  </view>
+</view>

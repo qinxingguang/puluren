@@ -1,0 +1,13 @@
+<view class="container">
+  <!-- 简介 -->
+  <view class="uploader">
+    <navigator url="./room/room" open-type="navigate" class="uploader-text">
+      <text>进入聊天室</text>
+    </navigator>
+  </view>
+  <view class="guide">
+    <text class="headline">本聊天室介绍</text>
+    <text class="p">本聊天室，只用于学习交流，请大家不要发布任何敏感信息，期望彼此服待，给大家一个良好的沟通环境</text>
+
+  </view>
+</view>

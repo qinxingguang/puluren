@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <view class="Layout-w">
+          <text class="font-size">背经文</text>
+        </view>
+      </view>
+      <view class="page-section-spacing">
+        <!-- 行间隔，class="page-section-spacing" -->
+        <view class="flex-wrp" style="flex-direction:row;">
+          <!-- 这个是横向布局，style="flex-direction:row;" -->
+          <view class="flex-item demo-text-1" style="width:280rpx">
+            <view class="Layout-v">主题</view>
+            <scroll-view  class="essay" scroll-y="true" style="height: 1200rpx">
+              <view>
+                <view class="btns">
+                  <view class="title-s {{index==active?'cur':''}}"  wx:for="{{btns}}" data-index="{{index}}" bindtap="toggle">{{item}}</view>
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+          <view class="flex-item demo-text-2" style="width:450rpx">
+            <view class="Layout-v">经句(点目录加载)</view>
+            <scroll-view scroll-y="true" style="height:1100rpx">
+              <view class="essay">
+                <view class="{{index==active?'cur':''}}">
+                  <view wx:for="{{dict1}}">
+                    <view>
+                      <text class="font-size1">{{item.headline}}</text>
+                    </view>
+                    <view>
+                      <text class="font-size2">{{item.jingje}}</text>
+                    </view>
+                    <view>
+                      <text>{{item.content}}</text>  
+                    </view>
+                  </view>
+                  </view>
+              </view>
+            </scroll-view>
+          </view>
+          <!-- <view class="flex-item demo-text-3">圭</view> -->
+        </view>
+      </view>
+    </view>
+    <!-- <view class="page-section">
+      <view class="page-section-title">
+        <text></text>
+      </view>
+    </view> -->
+  </view>
+</view>

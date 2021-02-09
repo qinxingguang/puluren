@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="list">
+    <button open-type="contact" bindcontact="onCustomerServiceButtonClick">
+      联系客服》》
+    </button>
+  </view>
+
+  <view class="guide">
+    <text class="headline">联系需知</text>
+    <text class="p">1. 因为是非盈利性软件，没有固定的客服人员，回复时间可能会比较慢长</text>
+    <text class="p">2. 建意大家有事留意，或到聊天室看看有人在吗，可以彼此帮助</text>
+  </view>
+</view>

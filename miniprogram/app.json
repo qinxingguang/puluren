@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/junliao/junliao",
+    "pages/godlove/godlove",
+    "pages/godlove/publish",
+    "pages/dizi/dizi",
+    "pages/phoneBook/groupPhone/groupPhone"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff5555",
+    "navigationBarTitleText": "铺路人",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColorTop": "#ff7f50",
+    "backgroundColorBottom": "#CC9966"
+  },
+
+  "tabBar": {
+    "color": "#DEB887",
+    "selectedColor": "#ff7f50",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabtu/1-02.png",
+        "selectedIconPath": "images/tabtu/1-01.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/godlove/godlove",
+        "iconPath": "images/tabtu/2-02.png",
+        "selectedIconPath": "images/tabtu/2-01.png",
+        "text": "爱心"
+      },
+      {
+        "pagePath": "pages/junliao/junliao",
+        "iconPath": "images/tabtu/3-02.png",
+        "selectedIconPath": "images/tabtu/3-01.png",
+        "text": "社群"
+      },
+      {
+        "pagePath": "pages/dizi/dizi",
+        "iconPath": "images/tabtu/4-02.png",
+        "selectedIconPath": "images/tabtu/4-01.png",
+        "text": "定位"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

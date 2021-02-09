@@ -1,0 +1,99 @@
+
+<!-- <button bindtap="callFunction">五大确据</button> -->
+<!-- <text class="code" wx:if="{{headline}}">{{headline}}</text>
+  <text class="code" wx:if="{{jingje}}">{{jingje}}</text>
+  <text class="code" wx:if="{{content}}">{{content}}</text> -->
+
+<!-- wx:for="{{a}}"        ： 定义循环，数组名称为 a ,简单的数据，一个数组，数组里有若干元素；
+wx:for-index="c" ： 定义索引值的名称 也来是控制循环的次数用的
+ wx:for-item="b"   ： 定义索引值对应项名称 把a数据里面的每个数组都取名叫b，好为接下来的代码用可以调用引用
+wx:for-items="d"  这是复杂的循环用的，A类型数组里有若干B类型数组，B类型数组里才有若干元素；
+wx:key="e"  数组里数组或元素的键  -->
+ <!-- 谨记：wx:for是循环数组，wx:for-item即给列表赋别名 -->
+ <!-- 这是一个导航栏，引用一组件miniprogarm_npm里的nvaigation-bar组件 -->
+ <mp-navigation-bar back="{{false}}" title="爱心">
+    <image slot="left" src="../../images/fabu.png" class="go-publish" bindtap="goPublish"></image>
+    <image slot="left" src="../../images/shuaxin.png" class="refresh" animation="{{animation}}" bindtap="refresh"></image>
+ </mp-navigation-bar>
+<!-- 先设计一个LIST容器，这个容器里放的是发布用户头像，信息，图片，点赞情况，评论情况等等 -->
+<view class="item" wx:for="{{list}}" wx:index="index" bindtouchstart="bindTouchStart">
+  <!-- 在左区容器设置情况，这里放发布信息的用户头像 -->
+  <view class="left">
+    <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+  </view>
+  <!--在右区容器内容比较复杂些，这个容器用纵向，从上往下排列  -->
+  <view class="right">
+    <!-- 先显示昵称 -->
+    <view class="nickname">{{item.userInfo.nickName}}</view>
+    <!-- 显示文字信息内容 -->
+    <view class="content">{{item.content}}</view>
+    <!-- 显示图片信息内容 -->
+    <view class="image-list">
+      <image class="image" wx:for-items="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+    </view>
+    <!-- 显示时间及点赞评论等区域 -->
+    <view class="time-area">
+      <view class="time">{{item.time}}</view>
+      <view>
+        <!-- 点赞与评论的按扭 -->
+        <image class="operation-button" src="../../images/open_1.png" catchtap="showOperationPannel" data-index="{{index}}" bindtouchstart="bindTouchStartOperation" bindtouchend="bindTouchEndOperation"></image>
+        <view class="operation-pannel" wx:if="{{showOperationPannelIndex == index}}" bindtouchstart="bindTouchStartOperationPannel" bindtouchend="bindTouchEndOperationPannel">
+          <view class="tab" catchtap="clicklove" data-index="{{index}}">
+            <image class="image" src="../../images/love_1.png"></image>
+            <text wx:if="{{item.isLove}}">取消</text>
+            <text wx:else>点赞</text>
+          </view>
+          <view class="tab" bindtap="clickComment" data-index="{{index}}">
+            <image class="image" src="../../images/binlun_1.png"></image>
+            <text>评论</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 点赞的列表信息，显示点赞的用户的昵称 -->
+    <view class="love-comment">
+      <view class="love" wx:if="{{item.loveList.length>0}}">
+        <image class="love-icon" src="../../images/love_1.png"></image>
+        <text class="love-nickname" wx:for-items="{{item.loveList}}" wx:for-item="love">{{love.nickName}}</text>
+      </view>
+      <!-- 评论的列表信息，显示评论用户的昵称及他的评论内容  data-index="{{index}}" data-commentindex="{{commentIndex}}" catchtap="clickCommentItem" 这些代码，都是为在手指或鼠标点击那条评论信息时，获得该评论信息所在的信息条的索引及评论列表中的索引，为给后端函数引用-->
+      <view class="comment" wx:if="{{item.commentList.length>0}}">
+        <view wx:for-items="{{item.commentList}}" wx:for-item="comment" wx:for-index="commentIndex" data-index="{{index}}" data-commentindex="{{commentIndex}}" catchtap="clickCommentItem">
+          <text class="comment-nickname">{{comment.nickName}}</text>
+          <block wx:if="{{comment.reply}}">
+            <text class="comment-conetnt">回复</text>
+            <text class="comment-nickname">{{comment.reply}}</text>
+
+          </block>
+          <text class="comment-conetnt">{{comment.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 写一段没有数据时的样式 -->
+<view wx:if="{{refresh && loading && list.length==0}}" class="weui-loadmore">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在刷新列表</view>
+</view>
+
+<!-- 写一段加载的样式 -->
+<view wx:if="{{haveMoreData && loadMore}}" class="weui-loadmore">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">加载更多</view>
+</view>
+
+<!-- 如果没有东西或以加载了，再给一个提示的样式 -->
+<view wx:if="{{!haveMoreData}}" class="weui-loadmore">
+  <view class="weui-loadmore__tips">没有更多数据啦</view>
+</view>
+
+<!-- 这是点评论功能时，弹出的评论输入框 -->
+<view class="comment-add" style="bottom:{{heightBottom !='' ? heightBottom: 0}}rpx;" wx:if="{{showCommentAdd}}">
+  <!-- focus="{{showCommentAdd}}"这个是来判断，当showCommentAdd是true时（输入框显示出来时），输入框就会获得（聚焦）光标 -->
+  <input class="comment-input" placeholder="{{reply.length>0 ? '回复 ' + reply : '请输入新的评论'}}" focus="{{showCommentAdd}}" bindinput="bindinput" >
+  </input>
+  <!-- disabled="{{commentContent.length>0 ? false:true}}"这句是判断如果输入框内有内容，按扭才能被点击 -->
+  <button class="comment-send" type="primary" disabled="{{commentContent.length>0 ? false:true}}" size="mini" catchtap="clickSend">发送</button>
+</view>

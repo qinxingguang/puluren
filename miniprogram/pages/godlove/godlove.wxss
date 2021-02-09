@@ -1,0 +1,184 @@
+/* miniprogram/pages/godlove/godlove.wxss */
+/* 
+整个页面的宽度750rpx
+左边距 20rpx
+右边距 20rpx
+头像设置 80rpx
+头像距右侧部份 10rpx
+
+右侧剩余 750rpx
+*/
+.go-publish{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;/*右边距20rpx*/
+}
+
+.refresh{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 2rpx;/*右边距20rpx*/
+}
+
+.item{
+  width: 100%;
+  padding: 20rpx 20rpx;
+  /* padding: 20rpx 20rpx 中第一个20rpx是定义上下边距参数，第二个20rpx是定义左右边距参数 这些都是内边距 */
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.left{
+  width: 80rpx;
+  margin-right:10rpx;/* 这个是右边的外边距*/
+}
+
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  background: #c2bdbd;/* 这个样式是给图片加背景色，如果没有加载图片时，会显示出背景色，这样就不会什么都不显示*/
+}
+
+.right{
+  width: 620rpx;
+  display: flex;/* 这叫灵活布局*/
+  flex-direction: column;/* 纵向局中*/
+}
+
+.nickname{
+  font-size: 32rpx;
+  line-height: 50rpx;/*行高*/
+  color: #3b4977;
+}
+
+.content{
+  font-size: 32rpx;
+  line-height: 40rpx;/*行高*/
+  color: #14151a;
+  margin-bottom: 10rpx;/* 这个是外面距，距离下方*/
+}
+
+.image-list{
+  display: flex;
+  flex-wrap: wrap;/* 默认一行显示三张图，多了可以换行*/
+}
+
+/*定义图片列表里的图片的样式*/
+.image-list .image{
+  width: 160rpx;
+  height: 160rpx;
+  background: #f3f3f3;/* 这个样式是给图片加背景色，如果没有加载图片时，会显示出背景色，这样就不会什么都不显示*/
+  margin-bottom: 10rpx;/* 这个是外面距，底边距，要不然图片会会粘在一起*/
+  margin-right: 10rpx;/* 这个是外面距，右边距，要不然图片会会粘在一起*/
+}
+/* 定义时间的区域了*/
+.time-area{
+  display: flex;
+  height: 70rpx;
+  position: relative;/* 定义里面的容器或元素的位置是相对的*/
+  align-items: center;/* 局中对齐*/
+}
+
+.time-area .time{
+  font-size: 26rpx;
+  line-height: 70rpx;
+  color: #696969;
+}
+/*定义里面的按扭的样式*/
+.time-area .operation-button{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;/* 定义里面的容器或元素的位置是绝对的*/
+  right: 0rpx;
+  top: 15rpx;
+}
+
+/*定义里面按扭被点击时，弹出来的面版的样式*/
+.time-area .operation-pannel{
+  position: absolute;
+  top: 0rpx;
+  right: 80rpx;
+  width: 300rpx;
+  line-height: 70rpx;
+  background-color: #3b4977;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  text-align: center;
+}
+/* 弹出来的面版里面点赞与评论的样式*/
+.time-area .operation-pannel .tab{
+  display: inline-block;/* 行内锁定，让他不换行*/
+  width: 150rpx;
+}
+
+.time-area .operation-pannel .tab .image{
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;/* 图片在这个小控件（容器）中居中*/
+  background-color: transparent;/*这个背景色，是透明的*/
+}
+/*定义这个显示有点赞与评论的显示区域的样式*/
+.love-comment{
+  margin-top: 10rpx;
+  background-color: #f7f7f7;
+  width: 100%;
+}
+/* 定义点赞的区域样式*/
+.love{
+  padding: 6rpx 16rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+/*点赞里点赞图标的样式*/
+.love .love-icon{
+  width: 26rpx;
+  height: 26rpx;
+}
+/*点赞里妮称的样式*/
+.love .love-nickname{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #3b4977;
+}
+/*定议评论区域的样式*/
+.comment{
+  padding: 6rpx 16rpx;
+  padding-bottom: 12rpx;
+  font-size: 30rpx;
+}
+/*定义评论里面内容的评论用户的妮称的样式*/
+.comment .comment-nickname{
+  color: #3b4977;
+}
+/*定义评论里面内容的评论用户的评论的样式*/
+.comment .comment-conetnt{
+  color: #181818;
+  line-height: 40rpx;
+}
+
+.comment-add{
+  position: fixed;/*可以悬浮*/
+  bottom: 0rpx;/*帖着底部*/
+  width: 100%;
+  height: 100rpx;
+  display: flex;/*内部灵活布局*/
+  align-items: center;/*居中布局*/
+  background-color: #ffffff;
+  border-top: 1px solid #f3f3f3;
+}
+.comment-add .comment-input{
+  height: 52rpx;/*输入框的高*/
+  line-height: 52rpx;/*输入框的行高*/
+  vertical-align: middle;/*里面的内容居中*/
+  color: #181818;/*里面的文字的颜色*/
+  margin-left: 20rpx;/*左边距20rpx*/
+  margin-right: 20rpx;/*右边距20rpx*/
+  padding: 5rpx 20rpx;/*距离上下5rpx与20rpx*/
+  background-color: #f3f3f3;
+  flex-grow: 1;/*剩余的宽度为1,*/
+
+}
+.comment-add .comment-send{
+  margin-right: 20rpx;/*右边距20rpx*/
+  font-size: 22rpx;
+}

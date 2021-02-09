@@ -1,0 +1,251 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.userinfo, .uploader, .tunnel {
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo {
+  padding-left: 120rpx;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-avatar[size] {
+  width: 100rpx;
+}
+
+
+.userinfo-avatar:after {
+  border: none;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 10px;
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.userinfo-nickname-wrapper {
+  flex: 1;
+}
+
+.uploader, .tunnel {
+  height: auto;
+  padding: 0 0 0 40rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.uploader-text, .tunnel-text {
+  width: 100%;
+  line-height: 52px;
+  font-size: 34rpx;
+  color: #007aff;
+}
+
+.uploader-container {
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.uploader-image {
+  width: 100%;
+  height: 360rpx;
+}
+
+.tunnel {
+  padding: 0 0 0 40rpx;
+}
+
+.tunnel-text {
+  position: relative;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tunnel-text:first-child {
+  border-top: none;
+}
+
+.tunnel-switch {
+  position: absolute;
+  right: 20rpx;
+  top: -2rpx;
+}
+
+.disable {
+  color: #888;
+}
+
+.service {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: linear-gradient(#007aff, #0063ce);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 300ms ease;
+}
+
+.service-button {
+  position: absolute;
+  top: 40rpx;
+}
+
+.service:active {
+  box-shadow: none;
+}
+
+.request-text {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  word-break: break-all;
+}
+.flex-wrp{
+  margin-top: 5rpx;
+  /* 与上面的容器的顶部的距离 */
+  display:flex;
+  /* 默认是纵向排的，display:flex;可以横向的把容器里的容器横排 */
+}
+.flex-item{
+  width: 700rpx;
+  height: 1200rpx;
+  font-size: 26rpx;
+  margin-top: 10px;/** 上间距的设置**/
+}
+.flex-item-V{
+  width: 400rpx;
+  height: 60rpx;
+}
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #aa7f46;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2{
+  position: relative;/** 位子：相对**/
+  align-items: center;/** 元素对齐：居中**/
+  justify-content: center;/** 内容对齐：居中**/
+  background-color: #aa59d88e;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.title-s{
+  border: 2px  solid #3f77b3;/**加固定边框大小颜色 **/
+  width: 220rpx; /**边框的宽度 **/
+  height: 80rpx;/**边框的高度 **/
+  border-radius: 10px;/** 边框变成圆角及弧度**/
+  text-align: center;/** 框内的文本居中**/
+  line-height: 80rpx;/** 要注意，框内文本要横向居中，需要用到line-height,像素设成与边框高度一样就能达到这个上下居中效果**/
+  color: #054b85;/**这是框内字体的颜色 **/
+  font-weight: bold;/**字体变粗 **/
+  margin-top: 5px;/** 这是间距的设置**/
+  background-color: #aa59d88e;
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a3feb;
+  color: #353535;
+  font-size: 36rpx;
+}
+.demo-text-4{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #df1212;
+  color: #353535;
+  font-size: 36rpx;
+}
+.font-break {
+  word-break:break-all;
+}
+.font-size{
+  font-size: 50rpx;
+  color: red;
+}
+.font-size1{
+  font-size: 40rpx;
+  color: rgb(255, 145, 0);
+}
+.font-size2{
+  font-size: 30rpx;
+  color: rgb(255, 230, 0);
+}
+.Layout-w{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+.Layout-v{
+  align-items: center;
+  text-align: center;
+}
+
+.cur{background: #ffffff;}
+
+.tab .cons .cur{
+  display: block;
+
+}
+
+.essay{
+  margin-left: 20rpx;/*左边距20rpx*/
+  margin-right: 20rpx;/*右边距20rpx*/
+
+}

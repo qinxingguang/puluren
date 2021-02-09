@@ -1,0 +1,46 @@
+/* miniprogram/pages/junliao/junliao.wxss */
+.groud{
+  margin-top: 10rpx;
+  background-color: #E5E5E5;
+  width: 100%;
+  display: flex;/*内部灵活布局*/
+  flex-direction: column;/* 纵向局中*/
+
+}
+
+.tex{
+  width: 100%;
+  display: flex;/*内部灵活布局*/
+  flex-direction: column;/* 纵向局中*/
+}
+.font{
+  border: 2px  solid #8ca9c9;/**加固定边框大小颜色 **/
+  height: 80rpx;/**边框的高度 **/
+  border-radius: 10px;/** 边框变成圆角及弧度**/
+  text-align: center;/** 框内的文本居中**/
+  line-height: 80rpx;/** 要注意，框内文本要横向居中，需要用到line-height,像素设成与边框高度一样就能达到这个上下居中效果**/
+  color: #52697c;/**这是框内字体的颜色 **/
+  font-weight: bold;/**字体变粗 **/
+  margin-top: 20px;/** 这是间距的设置**/
+  background-color: #55888f8e;
+  margin-left: 20rpx;/*左边距20rpx*/
+  margin-right: 20rpx;/*右边距20rpx*/
+
+}
+.rules{
+  margin-top: 10rpx;
+  background-color: #E5E5E5;
+  width: 100%;
+  border-top: 1px solid #f3f3f3;
+  display: flex;/*内部灵活布局*/
+  flex-direction: column;/* 纵向局中*/
+}
+.list{
+  padding: 6rpx 16rpx;
+  border-bottom: 1px solid #f0f0f0;
+  margin-left: 20rpx;/*左边距20rpx*/
+  margin-right: 20rpx;/*右边距20rpx*/
+  display: flex;/*内部灵活布局*/
+  flex-direction: column;/* 纵向局中*/
+  color: #2a3238;/**这是框内字体的颜色 **/
+}

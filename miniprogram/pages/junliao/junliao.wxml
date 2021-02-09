@@ -1,0 +1,26 @@
+<!--miniprogram/pages/junliao/junliao.wxml-->
+<!-- <text>miniprogram/pages/junliao/junliao.wxml</text> -->
+  <!-- 即时通信 -->
+  <view class="uploader">
+    <navigator url="../im/im" open-type="navigate" class="uploader-text">
+      <text>聊天室</text>
+    </navigator>
+  </view>
+  <view class="uploader">
+    <navigator url="../openapi/callback/callback" open-type="navigate" class="uploader-text">
+      <text>联系客服</text>
+    </navigator>
+  </view>
+  <view class="groud">
+    <view class="tex">
+      <view class="font">公告墙</view>
+    </view>
+    
+
+    
+    <view class="rules">
+      <text class="list">1.目前只做一些基本的功能实现，仅限部份朋友交流体验</text>
+      <text class="list">2.本小程序开发并非盈利目标，目前也不希望将其转化为盈利性产品</text>
+      <text class="list">3.后续还会继续优化及渲染，欢迎有兴趣的朋友加入一起研究</text>
+    </view>
+  </view>
